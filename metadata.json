@@ -1,0 +1,8 @@
+{
+  "name": "RF.STUDIO",
+  "description": "A comprehensive AI-powered design suite featuring Vortex Engine, Creative Lab, Car Design, and Photo Studio modules.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
