@@ -36,6 +36,15 @@ const App = () => {
    const [error, setError] = useState<string | null>(null);
    const [history, setHistory] = useState<any[]>([]);
    const [showApiKeyModal, setShowApiKeyModal] = useState(false);
+   const [manualApiKey, setManualApiKey] = useState(localStorage.getItem('rf-studio-api-key') || '');
+   const [tempKey, setTempKey] = useState('');
+
+   const handleSaveKey = () => {
+      if (!tempKey.trim()) return;
+      localStorage.setItem('rf-studio-api-key', tempKey);
+      setManualApiKey(tempKey);
+      setShowApiKeyModal(false);
+   };
 
    // Novo Estado Global de Aspect Ratio
    const [aspectRatio, setAspectRatio] = useState('1:1');
@@ -303,7 +312,7 @@ const App = () => {
    };
 
    const generateWithRetry = async (model: string, payload: any, retries = 3, initialDelay = 2000, config: any = {}) => {
-      const key = import.meta.env.VITE_GEMINI_API_KEY;
+      const key = import.meta.env.VITE_GEMINI_API_KEY || manualApiKey;
       if (!key) throw new Error("API_KEY_MISSING");
 
       const ai = new GoogleGenAI({ apiKey: key });
@@ -328,8 +337,8 @@ const App = () => {
 
    const callAI = async (prompt: string, files: { data: string | null }[] = [], model: string = 'gemini-2.5-flash-image', config: any = {}) => {
       // Check for API Key immediately
-      if (!import.meta.env.VITE_GEMINI_API_KEY) {
-         setError("CHAVE API NÃO DETECTADA. Verifique se o arquivo .env.local está configurado corretamente.");
+      if (!import.meta.env.VITE_GEMINI_API_KEY && !manualApiKey) {
+         setError("CHAVE API NÃO DETECTADA. Verifique se o arquivo .env.local está configurado corretamente ou insira manualmente.");
          setShowApiKeyModal(true);
          return;
       }
@@ -377,15 +386,16 @@ const App = () => {
 
    // --- STRUCTURED CONSULTANCY ANALYSIS ---
    const callConsultancyAI = async (prompt: string, files: { data: string | null }[]) => {
-      if (!import.meta.env.VITE_GEMINI_API_KEY) {
-         setError("CHAVE API NÃO DETECTADA. Verifique o arquivo .env.local.");
+      if (!import.meta.env.VITE_GEMINI_API_KEY && !manualApiKey) {
+         setError("CHAVE API NÃO DETECTADA. Verifique o arquivo .env.local ou insira manualmente.");
+         setShowApiKeyModal(true);
          return;
       }
       setLoading(true);
       setError(null);
       setConsultData(null); // Clear previous data
       try {
-         const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_GEMINI_API_KEY });
+         const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_GEMINI_API_KEY || manualApiKey });
          const parts: any[] = [{ text: prompt }];
          files.forEach(f => {
             if (f.data) parts.push({ inlineData: { mimeType: "image/jpeg", data: f.data.split(',')[1] } });
@@ -653,10 +663,28 @@ const App = () => {
                      Para usar os modelos <strong>PRO</strong> (Alta Resolução) e evitar erros de cota, você precisa conectar sua chave de API pessoal.
                   </p>
                   <div className="space-y-4">
-                     <button onClick={handleKeySelection} className="w-full bg-gradient-to-r from-orange-600 to-amber-600 py-5 rounded-2xl font-black uppercase tracking-widest hover:scale-[1.02] transition-transform shadow-xl" title="Selecionar Chave API">
-                        Selecionar Chave API
+                     <div className="flex flex-col gap-2 text-left">
+                        <label className="text-[10px] font-black text-zinc-500 uppercase tracking-widest pl-1">Chave API Manual</label>
+                        <input
+                           type="text"
+                           value={tempKey}
+                           onChange={(e) => setTempKey(e.target.value)}
+                           placeholder="Cole sua API Key aqui..."
+                           className="w-full bg-black/50 border border-zinc-800 focus:border-orange-500 rounded-xl px-4 py-3 text-xs font-bold text-white outline-none transition-all shadow-inner"
+                        />
+                     </div>
+                     <button onClick={handleSaveKey} className="w-full bg-orange-600 py-4 rounded-xl font-black uppercase tracking-widest hover:bg-orange-500 transition-colors shadow-lg shadow-orange-900/20 text-xs" title="Salvar e Continuar">
+                        Salvar e Continuar
                      </button>
-                     <button onClick={() => setShowApiKeyModal(false)} className="text-xs font-bold text-zinc-600 uppercase hover:text-white transition-colors" title="Cancelar e Voltar">
+                     <div className="relative flex items-center gap-4 py-2 opacity-50">
+                        <div className="h-px bg-zinc-800 flex-1"></div>
+                        <span className="text-[8px] font-black text-zinc-600 uppercase">OU USAR SISTEMA</span>
+                        <div className="h-px bg-zinc-800 flex-1"></div>
+                     </div>
+                     <button onClick={handleKeySelection} className="w-full bg-zinc-900 border border-zinc-800 py-4 rounded-xl font-black uppercase text-[10px] tracking-widest hover:bg-zinc-800 transition-colors text-zinc-400 hover:text-white" title="Selecionar via Sistema">
+                        Selecionar via Sistema
+                     </button>
+                     <button onClick={() => setShowApiKeyModal(false)} className="text-[10px] font-bold text-zinc-600 uppercase hover:text-white transition-colors pt-2" title="Cancelar e Voltar">
                         Cancelar e Voltar
                      </button>
                   </div>
