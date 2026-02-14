@@ -1,5 +1,7 @@
 {
   "compilerOptions": {
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
     "target": "ES2022",
     "experimentalDecorators": true,
     "useDefineForClassFields": false,
@@ -10,20 +12,21 @@
       "DOM.Iterable"
     ],
     "skipLibCheck": true,
-    "node",
-    "vite/client"
-  ],
-  "moduleResolution": "bundler",
-  "isolatedModules": true,
-  "moduleDetection": "force",
-  "allowJs": true,
-  "jsx": "react-jsx",
-  "paths": {
-    "@/*": [
-      "./*"
-    ]
-  },
-  "allowImportingTsExtensions": true,
-  "noEmit": true
-}
+    "types": [
+      "node",
+      "vite/client"
+    ],
+    "moduleResolution": "bundler",
+    "isolatedModules": true,
+    "moduleDetection": "force",
+    "allowJs": true,
+    "jsx": "react-jsx",
+    "paths": {
+      "@/*": [
+        "./*"
+      ]
+    },
+    "allowImportingTsExtensions": true,
+    "noEmit": true
+  }
 }
