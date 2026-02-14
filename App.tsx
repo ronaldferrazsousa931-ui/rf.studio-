@@ -745,7 +745,7 @@ const App = () => {
                <div className="max-w-7xl mx-auto mb-8 bg-red-900/50 border border-red-700 p-4 rounded-2xl flex items-center gap-4 text-white shadow-xl animate-in slide-in-from-top-4 fade-in">
                   <AlertCircle className="text-red-500 shrink-0" />
                   <p className="text-sm font-bold uppercase tracking-wide">{error}</p>
-                  <button onClick={() => setError(null)} className="ml-auto p-2 hover:bg-red-800 rounded-lg"><X size={16} /></button>
+                  <button onClick={() => setError(null)} className="ml-auto p-2 hover:bg-red-800 rounded-lg" aria-label="Fechar mensagem de erro"><X size={16} /></button>
                </div>
             )}
 
@@ -799,29 +799,29 @@ const App = () => {
                         </div>
                         <div className="space-y-2">
                            <label className="flex items-center gap-2 text-[10px] font-black text-zinc-500 uppercase tracking-widest"><BarChart3 size={12} className="text-emerald-500" /> Faturamento Mensal</label>
-                           <input className="w-full bg-zinc-950 border border-zinc-800 focus:border-emerald-600 rounded-2xl px-5 py-4 text-sm font-bold text-white transition-all outline-none shadow-inner" type="text" value={profile.monthlyRevenue} onChange={e => setProfile({ ...profile, monthlyRevenue: e.target.value })} />
+                           <input className="w-full bg-zinc-950 border border-zinc-800 focus:border-emerald-600 rounded-2xl px-5 py-4 text-sm font-bold text-white transition-all outline-none shadow-inner" type="text" value={profile.monthlyRevenue} onChange={e => setProfile({ ...profile, monthlyRevenue: e.target.value })} aria-label="Faturamento Mensal" />
                         </div>
                      </div>
 
                      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
                         <div className="space-y-2">
                            <label className="flex items-center gap-2 text-[10px] font-black text-zinc-500 uppercase tracking-widest"><Instagram size={12} className="text-pink-500" /> @Instagram</label>
-                           <input className="w-full bg-zinc-950 border border-zinc-800 focus:border-pink-600 rounded-2xl px-5 py-4 text-sm font-bold text-white transition-all outline-none shadow-inner" type="text" value={profile.instagram} onChange={e => setProfile({ ...profile, instagram: e.target.value })} />
+                           <input className="w-full bg-zinc-950 border border-zinc-800 focus:border-pink-600 rounded-2xl px-5 py-4 text-sm font-bold text-white transition-all outline-none shadow-inner" type="text" value={profile.instagram} onChange={e => setProfile({ ...profile, instagram: e.target.value })} aria-label="Instagram" />
                         </div>
                         <div className="space-y-2">
                            <label className="flex items-center gap-2 text-[10px] font-black text-zinc-500 uppercase tracking-widest"><Users2 size={12} className="text-blue-500" /> Clientes</label>
-                           <input className="w-full bg-zinc-950 border border-zinc-800 focus:border-blue-600 rounded-2xl px-5 py-4 text-sm font-bold text-white transition-all outline-none shadow-inner" type="number" value={profile.clients} onChange={e => setProfile({ ...profile, clients: e.target.value })} />
+                           <input className="w-full bg-zinc-950 border border-zinc-800 focus:border-blue-600 rounded-2xl px-5 py-4 text-sm font-bold text-white transition-all outline-none shadow-inner" type="number" value={profile.clients} onChange={e => setProfile({ ...profile, clients: e.target.value })} aria-label="Clientes" />
                         </div>
                         <div className="space-y-2">
                            <label className="flex items-center gap-2 text-[10px] font-black text-zinc-500 uppercase tracking-widest"><Briefcase size={12} className="text-orange-500" /> Time/Equipe</label>
-                           <input className="w-full bg-zinc-950 border border-zinc-800 focus:border-orange-600 rounded-2xl px-5 py-4 text-sm font-bold text-white transition-all outline-none shadow-inner" type="number" value={profile.team} onChange={e => setProfile({ ...profile, team: e.target.value })} />
+                           <input className="w-full bg-zinc-950 border border-zinc-800 focus:border-orange-600 rounded-2xl px-5 py-4 text-sm font-bold text-white transition-all outline-none shadow-inner" type="number" value={profile.team} onChange={e => setProfile({ ...profile, team: e.target.value })} aria-label="Time/Equipe" />
                         </div>
                      </div>
 
                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
                         <div className="space-y-2">
                            <label className="flex items-center gap-2 text-[10px] font-black text-zinc-500 uppercase tracking-widest"><Globe size={12} /> Gênero</label>
-                           <select value={profile.gender} onChange={e => setProfile({ ...profile, gender: e.target.value })} className="w-full bg-zinc-950 border border-zinc-800 focus:border-purple-600 rounded-2xl px-5 py-4 text-sm font-bold text-white transition-all outline-none appearance-none">
+                           <select value={profile.gender} onChange={e => setProfile({ ...profile, gender: e.target.value })} className="w-full bg-zinc-950 border border-zinc-800 focus:border-purple-600 rounded-2xl px-5 py-4 text-sm font-bold text-white transition-all outline-none appearance-none" aria-label="Gênero">
                               <option>Ele / Homem</option>
                               <option>Ela / Mulher</option>
                               <option>Outro</option>
@@ -829,13 +829,13 @@ const App = () => {
                         </div>
                         <div className="space-y-2">
                            <label className="flex items-center gap-2 text-[10px] font-black text-zinc-500 uppercase tracking-widest"><Target size={12} className="text-red-500" /> Principal Objetivo</label>
-                           <input className="w-full bg-zinc-950 border border-zinc-800 focus:border-red-600 rounded-2xl px-5 py-4 text-sm font-bold text-white transition-all outline-none shadow-inner" placeholder="Ex: Escalar operações" type="text" value={profile.mainGoal} onChange={e => setProfile({ ...profile, mainGoal: e.target.value })} />
+                           <input className="w-full bg-zinc-950 border border-zinc-800 focus:border-red-600 rounded-2xl px-5 py-4 text-sm font-bold text-white transition-all outline-none shadow-inner" placeholder="Ex: Escalar operações" type="text" value={profile.mainGoal} onChange={e => setProfile({ ...profile, mainGoal: e.target.value })} aria-label="Principal Objetivo" />
                         </div>
                      </div>
 
                      <div className="space-y-2 max-w-sm">
                         <label className="flex items-center gap-2 text-[10px] font-black text-zinc-500 uppercase tracking-widest"><Smartphone size={12} className="text-green-500" /> WhatsApp</label>
-                        <input className="w-full bg-zinc-950 border border-zinc-800 focus:border-green-600 rounded-2xl px-5 py-4 text-sm font-bold text-white transition-all outline-none shadow-inner" type="text" value={profile.whatsapp} onChange={e => setProfile({ ...profile, whatsapp: e.target.value })} />
+                        <input className="w-full bg-zinc-950 border border-zinc-800 focus:border-green-600 rounded-2xl px-5 py-4 text-sm font-bold text-white transition-all outline-none shadow-inner" type="text" value={profile.whatsapp} onChange={e => setProfile({ ...profile, whatsapp: e.target.value })} aria-label="Whatsapp" />
                      </div>
 
                      <div className="space-y-4">
@@ -850,22 +850,22 @@ const App = () => {
 
                      <div className="space-y-2">
                         <label className="text-[10px] font-black text-zinc-500 uppercase tracking-widest">Bio Curta (Pitch)</label>
-                        <textarea className="w-full bg-zinc-950 border border-zinc-800 focus:border-purple-600 rounded-2xl px-5 py-4 text-sm font-medium text-zinc-300 transition-all outline-none resize-none shadow-inner h-32" value={profile.shortBio} onChange={e => setProfile({ ...profile, shortBio: e.target.value })}></textarea>
+                        <textarea className="w-full bg-zinc-950 border border-zinc-800 focus:border-purple-600 rounded-2xl px-5 py-4 text-sm font-medium text-zinc-300 transition-all outline-none resize-none shadow-inner h-32" value={profile.shortBio} onChange={e => setProfile({ ...profile, shortBio: e.target.value })} aria-label="Bio Curta"></textarea>
                      </div>
 
                      <div className="space-y-2">
                         <label className="text-[10px] font-black text-zinc-500 uppercase tracking-widest">Seu Principal Serviço</label>
-                        <input className="w-full bg-zinc-950 border border-zinc-800 focus:border-purple-600 rounded-2xl px-5 py-4 text-sm font-bold text-white transition-all outline-none shadow-inner" placeholder="Ex: Consultoria de Tráfego Pago" type="text" value={profile.mainService} onChange={e => setProfile({ ...profile, mainService: e.target.value })} />
+                        <input className="w-full bg-zinc-950 border border-zinc-800 focus:border-purple-600 rounded-2xl px-5 py-4 text-sm font-bold text-white transition-all outline-none shadow-inner" placeholder="Ex: Consultoria de Tráfego Pago" type="text" value={profile.mainService} onChange={e => setProfile({ ...profile, mainService: e.target.value })} aria-label="Principal Serviço" />
                      </div>
 
                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
                         <div className="space-y-2">
                            <label className="text-[10px] font-black text-zinc-500 uppercase tracking-widest">Sobre Você</label>
-                           <textarea className="w-full bg-zinc-950 border border-zinc-800 focus:border-purple-600 rounded-2xl px-5 py-4 text-sm font-medium text-zinc-300 transition-all outline-none resize-none shadow-inner h-32" placeholder="Conte um pouco da sua trajetória..." value={profile.aboutYou} onChange={e => setProfile({ ...profile, aboutYou: e.target.value })}></textarea>
+                           <textarea className="w-full bg-zinc-950 border border-zinc-800 focus:border-purple-600 rounded-2xl px-5 py-4 text-sm font-medium text-zinc-300 transition-all outline-none resize-none shadow-inner h-32" placeholder="Conte um pouco da sua trajetória..." value={profile.aboutYou} onChange={e => setProfile({ ...profile, aboutYou: e.target.value })} aria-label="Sobre Você"></textarea>
                         </div>
                         <div className="space-y-2">
                            <label className="text-[10px] font-black text-zinc-500 uppercase tracking-widest">Sobre seu Negócio</label>
-                           <textarea className="w-full bg-zinc-950 border border-zinc-800 focus:border-purple-600 rounded-2xl px-5 py-4 text-sm font-medium text-zinc-300 transition-all outline-none resize-none shadow-inner h-32" placeholder="Fale sobre sua estrutura, missão e equipe..." value={profile.aboutBusiness} onChange={e => setProfile({ ...profile, aboutBusiness: e.target.value })}></textarea>
+                           <textarea className="w-full bg-zinc-950 border border-zinc-800 focus:border-purple-600 rounded-2xl px-5 py-4 text-sm font-medium text-zinc-300 transition-all outline-none resize-none shadow-inner h-32" placeholder="Fale sobre sua estrutura, missão e equipe..." value={profile.aboutBusiness} onChange={e => setProfile({ ...profile, aboutBusiness: e.target.value })} aria-label="Sobre seu Negócio"></textarea>
                         </div>
                      </div>
 
@@ -891,12 +891,12 @@ const App = () => {
                      <div className="space-y-8 w-full lg:w-80 relative z-10 order-2 lg:order-1">
                         <div className="bg-zinc-900/80 border-2 border-purple-600/30 rounded-3xl p-6 shadow-2xl space-y-5">
                            <label className="text-[10px] font-black text-zinc-500 uppercase tracking-widest flex items-center gap-2"><ImageIcon size={14} /> Referência</label>
-                           <div onClick={() => vortexRefInput.current?.click()} className="aspect-video border-2 border-dashed border-zinc-800 rounded-2xl flex items-center justify-center bg-black/40 hover:border-purple-600 transition-all cursor-pointer overflow-hidden">{vortexNodes.reference ? <img src={vortexNodes.reference} className="w-full h-full object-cover" /> : <Plus className="text-zinc-800" />}</div>
+                           <div onClick={() => vortexRefInput.current?.click()} className="aspect-video border-2 border-dashed border-zinc-800 rounded-2xl flex items-center justify-center bg-black/40 hover:border-purple-600 transition-all cursor-pointer overflow-hidden">{vortexNodes.reference ? <img src={vortexNodes.reference} className="w-full h-full object-cover" alt="Referência" /> : <Plus className="text-zinc-800" />}</div>
                            <input type="file" hidden ref={vortexRefInput} onChange={e => handleFile(e, (val: any) => setVortexNodes(prev => ({ ...prev, reference: val })))} />
                         </div>
                         <div className="bg-zinc-900/80 border-2 border-purple-600/30 rounded-3xl p-6 shadow-2xl space-y-5">
                            <label className="text-[10px] font-black text-zinc-500 uppercase tracking-widest flex items-center gap-2"><User size={14} /> Mídia / Logo</label>
-                           <div onClick={() => vortexMediaInput.current?.click()} className="aspect-square border-2 border-dashed border-zinc-800 rounded-2xl flex items-center justify-center bg-black/40 hover:border-purple-600 transition-all cursor-pointer overflow-hidden">{vortexNodes.media ? <img src={vortexNodes.media} className="w-full h-full object-cover" /> : <Plus className="text-zinc-800" />}</div>
+                           <div onClick={() => vortexMediaInput.current?.click()} className="aspect-square border-2 border-dashed border-zinc-800 rounded-2xl flex items-center justify-center bg-black/40 hover:border-purple-600 transition-all cursor-pointer overflow-hidden">{vortexNodes.media ? <img src={vortexNodes.media} className="w-full h-full object-cover" alt="Midia" /> : <Plus className="text-zinc-800" />}</div>
                            <input type="file" hidden ref={vortexMediaInput} onChange={e => handleFile(e, (val: any) => setVortexNodes(prev => ({ ...prev, media: val })))} />
                         </div>
                      </div>
@@ -910,7 +910,7 @@ const App = () => {
                      </div>
                      <div className="w-full flex-1 h-auto min-h-[400px] lg:h-full bg-zinc-900/80 backdrop-blur-xl border-2 border-zinc-800 rounded-[3rem] md:rounded-[4rem] p-8 md:p-10 relative z-10 overflow-y-auto custom-scrollbar order-3">
                         <h3 className="text-xl font-black uppercase italic tracking-tighter mb-8 text-white">Galeria Vortex</h3>
-                        <div className="grid grid-cols-1 gap-6">{vortexResults.map((url, i) => (<div key={i} className="rounded-3xl border-2 border-zinc-800 overflow-hidden shadow-2xl"><img src={url} className="w-full h-auto" /></div>))}</div>
+                        <div className="grid grid-cols-1 gap-6">{vortexResults.map((url, i) => (<div key={i} className="rounded-3xl border-2 border-zinc-800 overflow-hidden shadow-2xl"><img src={url} className="w-full h-full" alt={`Resultado ${i + 1}`} /></div>))}</div>
                      </div>
                   </div>
                </div>
@@ -922,14 +922,14 @@ const App = () => {
                   <div className="lg:col-span-4 space-y-8">
                      <div className="bg-zinc-950 p-10 rounded-[3rem] border border-zinc-900 shadow-2xl space-y-6">
                         <h3 className="text-2xl font-black uppercase italic text-white">Magic Editor</h3>
-                        <div onClick={() => editorRefInput.current?.click()} className="aspect-video border-2 border-dashed border-zinc-800 rounded-3xl flex items-center justify-center bg-zinc-900/30 cursor-pointer overflow-hidden">{editorBaseImage ? <img src={editorBaseImage} className="w-full h-full object-cover" /> : <Plus className="text-pink-600" size={32} />}</div>
+                        <div onClick={() => editorRefInput.current?.click()} className="aspect-video border-2 border-dashed border-zinc-800 rounded-3xl flex items-center justify-center bg-zinc-900/30 cursor-pointer overflow-hidden">{editorBaseImage ? <img src={editorBaseImage} className="w-full h-full object-cover" alt="Imagem Base" /> : <Plus className="text-pink-600" size={32} />}</div>
                         <input type="file" hidden ref={editorRefInput} onChange={e => handleFile(e, setEditorBaseImage)} />
-                        <textarea value={editorPrompt} onChange={e => setEditorPrompt(e.target.value)} placeholder="Descreva a edição..." className="w-full h-32 bg-black border border-zinc-800 p-4 rounded-2xl text-xs text-white resize-none" />
+                        <textarea value={editorPrompt} onChange={e => setEditorPrompt(e.target.value)} placeholder="Descreva a edição..." className="w-full h-32 bg-black border border-zinc-800 p-4 rounded-2xl text-xs text-white resize-none" aria-label="Prompt de Edição" />
                         <button onClick={onExecuteProduction} disabled={loading || !editorBaseImage} className="w-full bg-pink-600 py-4 rounded-xl font-black uppercase text-xs">{loading ? <Loader2 className="animate-spin mx-auto" /> : "Editar Imagem"}</button>
                      </div>
                   </div>
                   <div className="lg:col-span-8 flex items-center justify-center bg-zinc-950 border-2 border-zinc-900 rounded-[4rem] min-h-[600px] relative overflow-hidden">
-                     {generatedImage ? <img src={generatedImage} className="max-h-[500px] rounded-3xl" /> : <Wand2 size={64} className="text-zinc-800" />}
+                     {generatedImage ? <img src={generatedImage} className="max-h-[500px] rounded-3xl" alt="Imagem Gerada" /> : <Wand2 size={64} className="text-zinc-800" />}
                   </div>
                </div>
             )}
@@ -954,11 +954,11 @@ const App = () => {
                            <div className="space-y-4">
                               <div className="space-y-1">
                                  <label className="text-[9px] font-black text-zinc-600 uppercase tracking-widest">Nome do Objeto</label>
-                                 <input value={asset3dName} onChange={e => setAsset3dName(e.target.value)} placeholder="Ex: Tênis Esportivo, Pena, Diamante..." className="w-full bg-black border border-zinc-800 focus:border-red-500 rounded-xl p-4 text-xs font-bold text-white outline-none transition-all placeholder:text-zinc-700" />
+                                 <input value={asset3dName} onChange={e => setAsset3dName(e.target.value)} placeholder="Ex: Tênis Esportivo, Pena, Diamante..." className="w-full bg-black border border-zinc-800 focus:border-red-500 rounded-xl p-4 text-xs font-bold text-white outline-none transition-all placeholder:text-zinc-700" aria-label="Nome do Asset" />
                               </div>
                               <div className="space-y-1">
                                  <label className="text-[9px] font-black text-zinc-600 uppercase tracking-widest">Detalhes Visuais</label>
-                                 <textarea value={asset3dDetails} onChange={e => setAsset3dDetails(e.target.value)} placeholder="Ex: Futurista, flutuando, cores vibrantes, bordas suaves..." className="w-full h-32 bg-black border border-zinc-800 focus:border-red-500 rounded-xl p-4 text-xs font-medium text-white outline-none resize-none transition-all placeholder:text-zinc-700" />
+                                 <textarea value={asset3dDetails} onChange={e => setAsset3dDetails(e.target.value)} placeholder="Ex: Futurista, flutuando, cores vibrantes, bordas suaves..." className="w-full h-32 bg-black border border-zinc-800 focus:border-red-500 rounded-xl p-4 text-xs font-medium text-white outline-none resize-none transition-all placeholder:text-zinc-700" aria-label="Detalhes Asset" />
                               </div>
                            </div>
                         </div>
@@ -966,7 +966,7 @@ const App = () => {
                         <div className="bg-zinc-950 border border-zinc-900 rounded-[2.5rem] p-8 shadow-2xl">
                            <h3 className="text-xs font-black text-zinc-500 uppercase tracking-widest flex items-center gap-2 mb-4">Referências (Opcional)</h3>
                            <div onClick={() => asset3dRefInput.current?.click()} className="aspect-video border-2 border-dashed border-zinc-800 hover:border-red-500 rounded-2xl flex flex-col items-center justify-center bg-black/40 cursor-pointer transition-all group overflow-hidden">
-                              {asset3dRef ? <img src={asset3dRef} className="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity" /> : <div className="text-center text-zinc-600 group-hover:text-red-500 transition-colors"><ImageIcon size={24} className="mx-auto mb-2" /><span className="text-[9px] font-black uppercase">Upload de Identidade</span></div>}
+                              {asset3dRef ? <img src={asset3dRef} className="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity" alt="Referencia Asset" /> : <div className="text-center text-zinc-600 group-hover:text-red-500 transition-colors"><ImageIcon size={24} className="mx-auto mb-2" /><span className="text-[9px] font-black uppercase">Upload de Identidade</span></div>}
                            </div>
                            <input type="file" hidden ref={asset3dRefInput} onChange={e => handleFile(e, setAsset3dRef)} />
                         </div>
@@ -984,7 +984,7 @@ const App = () => {
                                  </div>
                               ) : (
                                  <div className="relative w-full h-full group">
-                                    <img src={generatedImage!} className="w-full h-full object-cover" />
+                                    <img src={generatedImage!} className="w-full h-full object-cover" alt="Asset Gerado" />
                                     <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black via-black/80 to-transparent flex items-end justify-between">
                                        <div>
                                           <h3 className="text-2xl font-black text-white uppercase italic">{asset3dName || 'Asset 3D'}</h3>
@@ -1040,19 +1040,19 @@ const App = () => {
                   <div className="lg:col-span-4 space-y-8">
                      <div className="bg-zinc-950 p-10 rounded-[3rem] border border-zinc-900 shadow-2xl space-y-6">
                         <label className="text-[10px] font-black text-zinc-500 uppercase tracking-widest mb-2 block">REFERÊNCIA</label>
-                        <div onClick={() => fileInputRef.current?.click()} className="aspect-video border-2 border-dashed border-zinc-800 rounded-3xl flex items-center justify-center bg-zinc-900/30 cursor-pointer overflow-hidden">{refFile ? <img src={refFile} className="w-full h-full object-cover" /> : <Plus className="text-purple-600" size={32} />}</div>
+                        <div onClick={() => fileInputRef.current?.click()} className="aspect-video border-2 border-dashed border-zinc-800 rounded-3xl flex items-center justify-center bg-zinc-900/30 cursor-pointer overflow-hidden">{refFile ? <img src={refFile} className="w-full h-full object-cover" alt="Referência" /> : <Plus className="text-purple-600" size={32} />}</div>
                         <input type="file" hidden ref={fileInputRef} onChange={e => handleFile(e, setRefFile)} />
                         <div className="space-y-6 pt-4 border-t border-zinc-900">
-                           <div className="space-y-1"><label className="text-[9px] font-black text-zinc-600 uppercase tracking-widest px-2">Subestilo</label><select value={subStyle} onChange={e => setSubStyle(e.target.value)} className="w-full bg-zinc-950 border border-zinc-800 p-4 rounded-xl text-xs font-bold text-white">{subStyles.map(s => <option key={s}>{s}</option>)}</select></div>
-                           <div className="space-y-1"><label className="text-[9px] font-black text-zinc-600 uppercase tracking-widest px-2">Cenário</label><select value={labScenario} onChange={e => setLabScenario(e.target.value)} className="w-full bg-zinc-950 border border-zinc-800 p-4 rounded-xl text-xs font-bold text-white">{scenarios.map(s => <option key={s}>{s}</option>)}</select></div>
+                           <div className="space-y-1"><label className="text-[9px] font-black text-zinc-600 uppercase tracking-widest px-2" htmlFor="subStyle">Subestilo</label><select id="subStyle" value={subStyle} onChange={e => setSubStyle(e.target.value)} className="w-full bg-zinc-950 border border-zinc-800 p-4 rounded-xl text-xs font-bold text-white" aria-label="Subestilo">{subStyles.map(s => <option key={s}>{s}</option>)}</select></div>
+                           <div className="space-y-1"><label className="text-[9px] font-black text-zinc-600 uppercase tracking-widest px-2">Cenário</label><select value={labScenario} onChange={e => setLabScenario(e.target.value)} className="w-full bg-zinc-950 border border-zinc-800 p-4 rounded-xl text-xs font-bold text-white" aria-label="Cenario">{scenarios.map(s => <option key={s}>{s}</option>)}</select></div>
                            <div className="space-y-3"><label className="text-[9px] font-black text-zinc-600 uppercase tracking-widest px-2">Intensidade IA</label><div className="flex bg-zinc-900 p-1 rounded-xl">{['BAIXO', 'MÉDIO', 'ALTO'].map(lvl => (<button key={lvl} onClick={() => setAiIntensity(lvl)} className={`flex-1 py-2 text-[9px] font-black rounded-lg transition-all ${aiIntensity === lvl ? 'bg-purple-600 text-white shadow-lg' : 'text-zinc-600'}`}>{lvl}</button>))}</div></div>
-                           <textarea value={extraDetails} onChange={e => setExtraDetails(e.target.value)} placeholder="Detalhes neurais..." className="w-full p-5 bg-zinc-950 border border-zinc-800 rounded-[2rem] text-xs h-32 resize-none text-white outline-none" />
+                           <textarea value={extraDetails} onChange={e => setExtraDetails(e.target.value)} placeholder="Detalhes neurais..." className="w-full p-5 bg-zinc-950 border border-zinc-800 rounded-[2rem] text-xs h-32 resize-none text-white outline-none" aria-label="Detalhes Extras" />
                            <button onClick={onExecuteProduction} disabled={loading} className="w-full bg-gradient-to-r from-orange-600 to-purple-600 py-6 rounded-3xl font-black text-sm uppercase italic shadow-2xl flex items-center justify-center gap-3">{loading ? <Loader2 className="animate-spin" /> : <Sparkles />} REVELAR OBRA</button>
                         </div>
                      </div>
                   </div>
                   <div className="lg:col-span-8 flex items-center justify-center bg-zinc-950 border-2 border-zinc-900 rounded-[4rem] min-h-[850px] overflow-hidden relative shadow-2xl">
-                     {loading ? <div className="text-center relative"><div className="w-32 h-32 border-[12px] border-purple-600 border-t-transparent rounded-full animate-spin mb-8 mx-auto"></div><h3 className="text-3xl font-black uppercase italic text-white tracking-widest">Sintetizando...</h3></div> : generatedImage ? <img src={generatedImage} className="max-h-[700px] rounded-[3.5rem] border-[16px] border-zinc-900 shadow-2xl" /> : <Wand2 size={100} className="opacity-10 text-zinc-800" />}
+                     {loading ? <div className="text-center relative"><div className="w-32 h-32 border-[12px] border-purple-600 border-t-transparent rounded-full animate-spin mb-8 mx-auto"></div><h3 className="text-3xl font-black uppercase italic text-white tracking-widest">Sintetizando...</h3></div> : generatedImage ? <img src={generatedImage} className="max-h-[700px] rounded-[3.5rem] border-[16px] border-zinc-900 shadow-2xl" alt="Imagem Gerada" /> : <Wand2 size={100} className="opacity-10 text-zinc-800" />}
                   </div>
                </div>
             )}
@@ -1063,17 +1063,17 @@ const App = () => {
                   <div className="lg:col-span-4 space-y-8">
                      <div className="bg-zinc-950 p-8 rounded-[3rem] border border-zinc-900 shadow-2xl">
                         <div className="flex items-center justify-between mb-4 px-1"><label className="text-[10px] font-black text-zinc-500 uppercase tracking-widest leading-none">FOTOS DO CARRO</label><span className="text-[8px] font-black text-orange-500 tracking-widest uppercase">1 OK</span></div>
-                        <div onClick={() => fileInputRef.current?.click()} className="aspect-video border-2 border-dashed border-zinc-800 rounded-3xl flex flex-col items-center justify-center bg-zinc-900/30 overflow-hidden cursor-pointer hover:border-blue-500">{refFile ? <img src={refFile} className="w-full h-full object-cover" /> : <Plus className="text-blue-600" size={32} />}</div>
+                        <div onClick={() => fileInputRef.current?.click()} className="aspect-video border-2 border-dashed border-zinc-800 rounded-3xl flex flex-col items-center justify-center bg-zinc-900/30 overflow-hidden cursor-pointer hover:border-blue-500">{refFile ? <img src={refFile} className="w-full h-full object-cover" alt="Referencia Foto Carro" /> : <Plus className="text-blue-600" size={32} />}</div>
                         <input type="file" hidden ref={fileInputRef} onChange={e => handleFile(e, setRefFile)} />
                         <div className="space-y-6 mt-8 pt-4 border-t border-zinc-900">
-                           <div className="space-y-1"><label className="text-[9px] font-black text-zinc-600 uppercase tracking-widest px-2">Modelo (Texto)</label><input type="text" value={carModel} onChange={e => setCarModel(e.target.value)} className="w-full bg-zinc-950 border border-zinc-800 p-4 rounded-xl text-xs font-bold text-white shadow-inner outline-none focus:border-blue-600" /></div>
-                           <div className="space-y-1"><label className="text-[9px] font-black text-zinc-600 uppercase tracking-widest px-2">Ângulo da Foto</label><select value={carAngle} onChange={e => setCarAngle(e.target.value)} className="w-full bg-zinc-950 border border-zinc-800 p-4 rounded-xl text-xs font-bold text-white">{(['Frontal baixo', 'Perfil', 'Traseira 3/4', 'Drone']).map(a => <option key={a}>{a}</option>)}</select></div>
-                           <div className="space-y-1"><label className="text-[9px] font-black text-zinc-600 uppercase tracking-widest px-2">Ação / Movimento</label><select value={carAction} onChange={e => setCarAction(e.target.value)} className="w-full bg-zinc-950 border border-zinc-800 p-4 rounded-xl text-xs font-bold text-white"><option>Estacionado</option><option>Alta velocidade</option><option>Saltando</option></select></div>
+                           <div className="space-y-1"><label className="text-[9px] font-black text-zinc-600 uppercase tracking-widest px-2">Modelo (Texto)</label><input type="text" value={carModel} onChange={e => setCarModel(e.target.value)} className="w-full bg-zinc-950 border border-zinc-800 p-4 rounded-xl text-xs font-bold text-white shadow-inner outline-none focus:border-blue-600" aria-label="Modelo Carro" /></div>
+                           <div className="space-y-1"><label className="text-[9px] font-black text-zinc-600 uppercase tracking-widest px-2">Ângulo da Foto</label><select value={carAngle} onChange={e => setCarAngle(e.target.value)} className="w-full bg-zinc-950 border border-zinc-800 p-4 rounded-xl text-xs font-bold text-white" aria-label="Angulo Carro">{(['Frontal baixo', 'Perfil', 'Traseira 3/4', 'Drone']).map(a => <option key={a}>{a}</option>)}</select></div>
+                           <div className="space-y-1"><label className="text-[9px] font-black text-zinc-600 uppercase tracking-widest px-2">Ação / Movimento</label><select value={carAction} onChange={e => setCarAction(e.target.value)} className="w-full bg-zinc-950 border border-zinc-800 p-4 rounded-xl text-xs font-bold text-white" aria-label="Acao Carro"><option>Estacionado</option><option>Alta velocidade</option><option>Saltando</option></select></div>
                            <button onClick={onExecuteProduction} disabled={loading} className="w-full bg-gradient-to-r from-blue-700 to-orange-600 py-6 rounded-3xl font-black text-sm uppercase italic shadow-2xl flex items-center justify-center gap-3 transition-all hover:scale-[1.02] active:scale-95 group overflow-hidden relative"><div className="absolute inset-0 bg-white/10 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>{loading ? <RefreshCcw className="animate-spin" /> : <Car size={20} />} EXECUTAR RENDER</button>
                         </div>
                      </div>
                   </div>
-                  <div className="lg:col-span-8 flex items-center justify-center bg-zinc-950 border-2 border-zinc-900 rounded-[4rem] min-h-[850px] relative overflow-hidden shadow-2xl group"><div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-[0.05]"></div>{loading ? <div className="text-center relative z-10"><RefreshCcw className="animate-spin text-orange-500 mb-4 mx-auto" size={48} /><h3 className="text-2xl font-black uppercase italic text-white tracking-widest">Sintetizando Pixels...</h3></div> : generatedImage ? <img src={generatedImage} className="max-h-[700px] rounded-[3.5rem] border-[16px] border-zinc-900 shadow-2xl" /> : <Car size={100} className="opacity-10 text-zinc-800" />}</div>
+                  <div className="lg:col-span-8 flex items-center justify-center bg-zinc-950 border-2 border-zinc-900 rounded-[4rem] min-h-[850px] relative overflow-hidden shadow-2xl group"><div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-[0.05]"></div>{loading ? <div className="text-center relative z-10"><RefreshCcw className="animate-spin text-orange-500 mb-4 mx-auto" size={48} /><h3 className="text-2xl font-black uppercase italic text-white tracking-widest">Sintetizando Pixels...</h3></div> : generatedImage ? <img src={generatedImage} className="max-h-[700px] rounded-[3.5rem] border-[16px] border-zinc-900 shadow-2xl" alt="Render Carro" /> : <Car size={100} className="opacity-10 text-zinc-800" />}</div>
                </div>
             )}
 
@@ -1096,7 +1096,7 @@ const App = () => {
                         <div className="space-y-2">
                            <label className="text-[9px] font-black text-zinc-500 uppercase tracking-widest">Referências de Identidade</label>
                            <div onClick={() => fileInputRef.current?.click()} className="aspect-video border-2 border-dashed border-zinc-800 hover:border-zinc-600 rounded-3xl flex flex-col items-center justify-center bg-black/40 cursor-pointer transition-all group overflow-hidden relative">
-                              {refFile ? <img src={refFile} className="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity" /> : <div className="text-center text-zinc-600 group-hover:text-zinc-400 transition-colors"><User size={24} className="mx-auto mb-2" /><span className="text-[8px] font-black uppercase tracking-widest">Upload</span></div>}
+                              {refFile ? <img src={refFile} className="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity" alt="Referencia Hero" /> : <div className="text-center text-zinc-600 group-hover:text-zinc-400 transition-colors"><User size={24} className="mx-auto mb-2" /><span className="text-[8px] font-black uppercase tracking-widest">Upload</span></div>}
                               <div className="absolute bottom-4 left-4">
                                  <span className="bg-zinc-800 text-zinc-400 text-[8px] font-black px-3 py-1 rounded-full uppercase tracking-widest hover:bg-zinc-700 transition-colors">+ +REF</span>
                               </div>
@@ -1107,7 +1107,7 @@ const App = () => {
                         {/* Aesthetic */}
                         <div className="space-y-2">
                            <label className="text-[9px] font-black text-zinc-500 uppercase tracking-widest">Estética (Opcional)</label>
-                           <input value={heroAesthetic} onChange={e => setHeroAesthetic(e.target.value)} placeholder="Ex: herói urbano, sci-fi, dark hero..." className="w-full bg-black border border-zinc-800 focus:border-pink-500 rounded-2xl p-4 text-xs font-bold text-white outline-none transition-all placeholder:text-zinc-700" />
+                           <input value={heroAesthetic} onChange={e => setHeroAesthetic(e.target.value)} placeholder="Ex: herói urbano, sci-fi, dark hero..." className="w-full bg-black border border-zinc-800 focus:border-pink-500 rounded-2xl p-4 text-xs font-bold text-white outline-none transition-all placeholder:text-zinc-700" aria-label="Estetica" />
                         </div>
 
                         {/* Powers */}
@@ -1128,7 +1128,7 @@ const App = () => {
 
                      {/* Right Column: Preview */}
                      <div className="lg:col-span-8 bg-zinc-950 border border-zinc-900 rounded-[3rem] p-2 flex items-center justify-center overflow-hidden relative min-h-[600px]">
-                        {generatedImage ? <img src={generatedImage} className="w-full h-full object-cover rounded-[2.5rem]" /> : <Zap size={64} className="text-zinc-800" />}
+                        {generatedImage ? <img src={generatedImage} className="w-full h-full object-cover rounded-[2.5rem]" alt="Hero Gerado" /> : <Zap size={64} className="text-zinc-800" />}
                      </div>
                   </div>
                </div>
@@ -1140,17 +1140,17 @@ const App = () => {
                   <div className="lg:col-span-4 space-y-8">
                      <div className="bg-zinc-950 p-10 rounded-[3rem] border border-zinc-900 shadow-2xl space-y-6">
                         <h3 className="text-2xl font-black uppercase italic text-white">Business Portrait</h3>
-                        <div onClick={() => fileInputRef.current?.click()} className="aspect-square border-2 border-dashed border-zinc-800 rounded-3xl flex items-center justify-center bg-zinc-900/30 cursor-pointer overflow-hidden">{refFile ? <img src={refFile} className="w-full h-full object-cover" /> : <Plus className="text-blue-600" size={32} />}</div>
+                        <div onClick={() => fileInputRef.current?.click()} className="aspect-square border-2 border-dashed border-zinc-800 rounded-3xl flex items-center justify-center bg-zinc-900/30 cursor-pointer overflow-hidden">{refFile ? <img src={refFile} className="w-full h-full object-cover" alt="Referencia Business" /> : <Plus className="text-blue-600" size={32} />}</div>
                         <input type="file" hidden ref={fileInputRef} onChange={e => handleFile(e, setRefFile)} />
                         <div className="space-y-4">
-                           <select value={bizLight} onChange={e => setBizLight(e.target.value)} className="w-full bg-zinc-900 border border-zinc-800 p-4 rounded-xl text-xs font-bold text-white">{bizLights.map(l => <option key={l}>{l}</option>)}</select>
-                           <input value={bizOutfit} onChange={e => setBizOutfit(e.target.value)} placeholder="Outfit (Ex: Navy Suit)" className="w-full bg-zinc-900 border border-zinc-800 p-4 rounded-xl text-xs font-bold text-white" />
+                           <select value={bizLight} onChange={e => setBizLight(e.target.value)} className="w-full bg-zinc-900 border border-zinc-800 p-4 rounded-xl text-xs font-bold text-white" aria-label="Iluminacao">{bizLights.map(l => <option key={l}>{l}</option>)}</select>
+                           <input value={bizOutfit} onChange={e => setBizOutfit(e.target.value)} placeholder="Outfit (Ex: Navy Suit)" className="w-full bg-zinc-900 border border-zinc-800 p-4 rounded-xl text-xs font-bold text-white" aria-label="Roupa Business" />
                         </div>
                         <button onClick={onExecuteProduction} disabled={loading} className="w-full bg-blue-600 py-4 rounded-xl font-black uppercase text-xs">{loading ? <Loader2 className="animate-spin mx-auto" /> : "Gerar Portrait"}</button>
                      </div>
                   </div>
                   <div className="lg:col-span-8 flex items-center justify-center bg-zinc-950 border-2 border-zinc-900 rounded-[4rem] min-h-[600px] relative overflow-hidden">
-                     {generatedImage ? <img src={generatedImage} className="max-h-[600px] rounded-3xl" /> : <Briefcase size={64} className="text-zinc-800" />}
+                     {generatedImage ? <img src={generatedImage} className="max-h-[600px] rounded-3xl" alt="Business Portrait Gerado" /> : <Briefcase size={64} className="text-zinc-800" />}
                   </div>
                </div>
             )}
@@ -1161,19 +1161,19 @@ const App = () => {
                   <header className="flex items-center gap-6"><div className="bg-cyan-500 p-4 rounded-3xl text-white shadow-xl shadow-cyan-900/20"><Camera size={32} /></div><div><h2 className="text-5xl font-black uppercase italic tracking-tighter text-white leading-none">Nova Foto de Estúdio</h2><div className="flex items-center gap-4 text-[11px] font-bold text-zinc-500 uppercase tracking-widest mt-2"><span className={studioStep === 1 ? "text-cyan-500 underline decoration-2 underline-offset-4" : "opacity-40"}>1. UPLOAD DE REFERÊNCIAS</span><span className="opacity-20">→</span><span className={studioStep === 2 ? "text-cyan-500 underline decoration-2 underline-offset-4" : "opacity-40"}>2. AJUSTE DE IDENTIDADE</span></div></div></header>
                   {studioStep === 1 ? (
                      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 pt-4">
-                        <div className="bg-zinc-950 p-12 rounded-[4rem] border border-zinc-900 shadow-2xl flex flex-col h-[650px] relative"><div className="flex items-center gap-3 mb-2"><div className="bg-cyan-500/20 p-2 rounded-xl text-cyan-500"><ImageIcon size={20} /></div><h3 className="text-base font-black text-white uppercase tracking-widest">Imagem Base</h3></div><p className="text-[10px] text-zinc-600 uppercase font-black mb-12 tracking-widest text-center">CENÁRIO, POSE E ROUPA</p><div onClick={() => studioBaseRef.current?.click()} className={`flex-1 border-2 border-dashed rounded-[3.5rem] flex items-center justify-center cursor-pointer transition-all ${studioBase ? 'border-cyan-500 bg-cyan-500/5 shadow-2xl' : 'border-zinc-800 bg-zinc-900/20 hover:border-cyan-500'}`}>{studioBase ? <img src={studioBase} className="max-h-full object-contain p-8 rounded-[4.5rem]" /> : <ImageIcon size={48} className="text-zinc-800" />}</div><input type="file" hidden ref={studioBaseRef} onChange={e => handleFile(e, setStudioBase)} /><button onClick={() => studioBaseRef.current?.click()} className="mt-8 mx-auto flex items-center gap-3 px-12 py-4 bg-zinc-900 text-[10px] font-black uppercase tracking-[0.4em] rounded-full border border-zinc-800 text-zinc-500 hover:text-cyan-400 shadow-xl">+ +REF</button></div>
-                        <div className="bg-zinc-950 p-12 rounded-[4rem] border border-zinc-900 shadow-2xl flex flex-col h-[650px] relative"><div className="flex items-center gap-3 mb-2"><div className="bg-cyan-500/20 p-2 rounded-xl text-cyan-500"><User size={22} /></div><h3 className="text-base font-black text-white uppercase tracking-widest">O Modelo</h3></div><p className="text-[10px] text-zinc-600 uppercase font-black mb-12 tracking-widest text-center">IDENTIDADE E ROSTO</p><div onClick={() => studioModelRef.current?.click()} className={`flex-1 border-2 border-dashed rounded-[3.5rem] flex items-center justify-center cursor-pointer transition-all ${studioModel ? 'border-cyan-500 bg-cyan-500/5 shadow-2xl' : 'border-zinc-800 bg-zinc-900/20 hover:border-cyan-500'}`}>{studioModel ? <img src={studioModel} className="max-h-full object-contain p-8 rounded-[4.5rem]" /> : <User size={48} className="text-zinc-800" />}</div><input type="file" hidden ref={studioModelRef} onChange={e => handleFile(e, setStudioModel)} /><button onClick={() => studioModelRef.current?.click()} className="mt-8 mx-auto flex items-center gap-3 px-12 py-4 bg-zinc-900 text-[10px] font-black uppercase rounded-full border border-zinc-800 text-zinc-500 hover:text-cyan-400 shadow-xl">+ +REF</button></div>
+                        <div className="bg-zinc-950 p-12 rounded-[4rem] border border-zinc-900 shadow-2xl flex flex-col h-[650px] relative"><div className="flex items-center gap-3 mb-2"><div className="bg-cyan-500/20 p-2 rounded-xl text-cyan-500"><ImageIcon size={20} /></div><h3 className="text-base font-black text-white uppercase tracking-widest">Imagem Base</h3></div><p className="text-[10px] text-zinc-600 uppercase font-black mb-12 tracking-widest text-center">CENÁRIO, POSE E ROUPA</p><div onClick={() => studioBaseRef.current?.click()} className={`flex-1 border-2 border-dashed rounded-[3.5rem] flex items-center justify-center cursor-pointer transition-all ${studioBase ? 'border-cyan-500 bg-cyan-500/5 shadow-2xl' : 'border-zinc-800 bg-zinc-900/20 hover:border-cyan-500'}`}>{studioBase ? <img src={studioBase} className="max-h-full object-contain p-8 rounded-[4.5rem]" alt="Referencia Base" /> : <ImageIcon size={48} className="text-zinc-800" />}</div><input type="file" hidden ref={studioBaseRef} onChange={e => handleFile(e, setStudioBase)} /><button onClick={() => studioBaseRef.current?.click()} className="mt-8 mx-auto flex items-center gap-3 px-12 py-4 bg-zinc-900 text-[10px] font-black uppercase tracking-[0.4em] rounded-full border border-zinc-800 text-zinc-500 hover:text-cyan-400 shadow-xl">+ +REF</button></div>
+                        <div className="bg-zinc-950 p-12 rounded-[4rem] border border-zinc-900 shadow-2xl flex flex-col h-[650px] relative"><div className="flex items-center gap-3 mb-2"><div className="bg-cyan-500/20 p-2 rounded-xl text-cyan-500"><User size={22} /></div><h3 className="text-base font-black text-white uppercase tracking-widest">O Modelo</h3></div><p className="text-[10px] text-zinc-600 uppercase font-black mb-12 tracking-widest text-center">IDENTIDADE E ROSTO</p><div onClick={() => studioModelRef.current?.click()} className={`flex-1 border-2 border-dashed rounded-[3.5rem] flex items-center justify-center cursor-pointer transition-all ${studioModel ? 'border-cyan-500 bg-cyan-500/5 shadow-2xl' : 'border-zinc-800 bg-zinc-900/20 hover:border-cyan-500'}`}>{studioModel ? <img src={studioModel} className="max-h-full object-contain p-8 rounded-[4.5rem]" alt="Referencia Modelo" /> : <User size={48} className="text-zinc-800" />}</div><input type="file" hidden ref={studioModelRef} onChange={e => handleFile(e, setStudioModel)} /><button onClick={() => studioModelRef.current?.click()} className="mt-8 mx-auto flex items-center gap-3 px-12 py-4 bg-zinc-900 text-[10px] font-black uppercase rounded-full border border-zinc-800 text-zinc-500 hover:text-cyan-400 shadow-xl">+ +REF</button></div>
                         <div className="lg:col-span-2 flex justify-center pt-8"><button onClick={onExecuteProduction} disabled={loading || !studioBase || !studioModel} className="px-24 py-10 bg-cyan-600 text-white font-black rounded-[3rem] shadow-[0_25px_60px_rgba(8,145,178,0.4)] text-base uppercase italic tracking-tighter transition-all hover:scale-[1.03] active:scale-95 group overflow-hidden relative disabled:opacity-50"><div className="absolute inset-0 bg-white/10 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>{loading ? <Loader2 className="animate-spin mx-auto" size={24} /> : <Sparkles size={24} />}<span className="ml-4">{loading ? "Sintonizando Core..." : "GERAR FOTO PRINCIPAL"}</span></button></div>
                      </div>
                   ) : (
                      <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 pt-4 items-start animate-in zoom-in duration-700">
                         <div className="lg:col-span-6 space-y-10">
-                           <div className="bg-zinc-950 border-2 border-zinc-900 rounded-[4rem] p-1 shadow-2xl relative group overflow-hidden"><div className="absolute inset-0 bg-cyan-500/5 blur-[100px] pointer-events-none"></div><img src={generatedImage!} className="w-full h-auto rounded-[3.8rem] shadow-inner" alt="Main Result" /><div className="absolute top-8 right-8 flex gap-3"><button className="bg-black/60 backdrop-blur-md p-3 rounded-2xl text-white hover:bg-cyan-600 border border-white/10 shadow-xl shadow-cyan-900/10"><Download size={20} /></button><button onClick={() => setStudioStep(1)} className="bg-black/60 backdrop-blur-md p-3 rounded-2xl text-white hover:bg-red-600 border border-white/10 shadow-xl shadow-red-900/10"><X size={20} /></button></div></div>
-                           <div className="space-y-6"><h3 className="text-xs font-black text-zinc-500 uppercase tracking-[0.3em] px-4">Fotos da Sessão</h3><div className="flex gap-4 overflow-x-auto pb-4 custom-scrollbar">{sessionPhotos.map((photo, idx) => (<div key={idx} onClick={() => setGeneratedImage(photo)} className={`flex-shrink-0 w-32 aspect-square rounded-3xl border-4 cursor-pointer transition-all ${generatedImage === photo ? 'border-cyan-500 scale-105 shadow-2xl shadow-cyan-900/20' : 'border-zinc-900'}`}><img src={photo} className="w-full h-full object-cover rounded-[1.2rem]" /></div>))}</div></div>
+                           <div className="bg-zinc-950 border-2 border-zinc-900 rounded-[4rem] p-1 shadow-2xl relative group overflow-hidden"><div className="absolute inset-0 bg-cyan-500/5 blur-[100px] pointer-events-none"></div><img src={generatedImage!} className="w-full h-auto rounded-[3.8rem] shadow-inner" alt="Main Result" /><div className="absolute top-8 right-8 flex gap-3"><button className="bg-black/60 backdrop-blur-md p-3 rounded-2xl text-white hover:bg-cyan-600 border border-white/10 shadow-xl shadow-cyan-900/10" aria-label="Baixar resultado"><Download size={20} /></button><button onClick={() => setStudioStep(1)} className="bg-black/60 backdrop-blur-md p-3 rounded-2xl text-white hover:bg-red-600 border border-white/10 shadow-xl shadow-red-900/10" aria-label="Fechar"><X size={20} /></button></div></div>
+                           <div className="space-y-6"><h3 className="text-xs font-black text-zinc-500 uppercase tracking-[0.3em] px-4">Fotos da Sessão</h3><div className="flex gap-4 overflow-x-auto pb-4 custom-scrollbar">{sessionPhotos.map((photo, idx) => (<div key={idx} onClick={() => setGeneratedImage(photo)} className={`flex-shrink-0 w-32 aspect-square rounded-3xl border-4 cursor-pointer transition-all ${generatedImage === photo ? 'border-cyan-500 scale-105 shadow-2xl shadow-cyan-900/20' : 'border-zinc-900'}`}><img src={photo} className="w-full h-full object-cover rounded-[1.2rem]" alt={`Foto sessao ${idx + 1}`} /></div>))}</div></div>
                         </div>
                         <div className="lg:col-span-6 space-y-12 pt-4 bg-zinc-950 p-12 rounded-[4rem] border border-zinc-900 shadow-2xl">
-                           <div className="space-y-6"><div className="flex items-center justify-between px-2"><div className="flex items-center gap-3"><div className="bg-cyan-500/10 p-1.5 rounded-lg text-cyan-500"><Target size={18} /></div><h4 className="text-[10px] font-black text-zinc-400 uppercase tracking-widest">Semelhança Facial</h4></div><span className="text-sm font-black text-cyan-500 italic">{facialSim}%</span></div><input type="range" min="50" max="100" value={facialSim} onChange={(e) => setFacialSim(Number(e.target.value))} className="w-full h-2 bg-zinc-900 rounded-full appearance-none cursor-pointer accent-cyan-500 shadow-inner" /></div>
-                           <div className="space-y-3"><label className="text-[10px] font-black text-zinc-600 uppercase tracking-widest px-2">Troca de Roupa</label><input value={studioOutfit} onChange={e => setStudioOutfit(e.target.value)} placeholder="Ex: Terno slim azul marinho..." className="w-full p-5 bg-zinc-900 border border-zinc-800 rounded-2xl text-[11px] font-bold text-white outline-none focus:border-cyan-500 shadow-inner" /></div>
+                           <div className="space-y-6"><div className="flex items-center justify-between px-2"><div className="flex items-center gap-3"><div className="bg-cyan-500/10 p-1.5 rounded-lg text-cyan-500"><Target size={18} /></div><h4 className="text-[10px] font-black text-zinc-400 uppercase tracking-widest">Semelhança Facial</h4></div><span className="text-sm font-black text-cyan-500 italic">{facialSim}%</span></div><input type="range" min="50" max="100" value={facialSim} onChange={(e) => setFacialSim(Number(e.target.value))} className="w-full h-2 bg-zinc-900 rounded-full appearance-none cursor-pointer accent-cyan-500 shadow-inner" aria-label="Nivel de semelhanca" /></div>
+                           <div className="space-y-3"><label className="text-[10px] font-black text-zinc-600 uppercase tracking-widest px-2">Troca de Roupa</label><input value={studioOutfit} onChange={e => setStudioOutfit(e.target.value)} placeholder="Ex: Terno slim azul marinho..." className="w-full p-5 bg-zinc-900 border border-zinc-800 rounded-2xl text-[11px] font-bold text-white outline-none focus:border-cyan-500 shadow-inner" aria-label="Troca de Roupa" /></div>
                            <div className="space-y-6 pt-6"><button onClick={onExecuteProduction} disabled={loading} className="w-full py-8 bg-gradient-to-r from-orange-600 to-purple-600 text-white font-black rounded-[2.5rem] shadow-2xl text-sm uppercase italic transition-all hover:scale-[1.02] active:scale-95 group overflow-hidden relative"><div className="absolute inset-0 bg-white/5 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>RE-GERAR FOTO PRINCIPAL</button></div>
                         </div>
                      </div>
@@ -1198,14 +1198,14 @@ const App = () => {
                            <div className="space-y-2">
                               <label className="text-[9px] font-black text-zinc-500 uppercase tracking-widest flex items-center gap-2"><Layout size={12} /> 1. Layout (Estrutura)</label>
                               <div onClick={() => remixMapRef.current?.click()} className="h-32 border-2 border-dashed border-zinc-800 rounded-2xl flex items-center justify-center bg-zinc-900/30 cursor-pointer overflow-hidden hover:border-purple-500 transition-colors">
-                                 {remixMap ? <img src={remixMap} className="w-full h-full object-cover" /> : <Plus className="text-zinc-600" size={24} />}
+                                 {remixMap ? <img src={remixMap} className="w-full h-full object-cover" alt="Layout Map" /> : <Plus className="text-zinc-600" size={24} />}
                               </div>
                               <input type="file" hidden ref={remixMapRef} onChange={e => handleFile(e, setRemixMap)} />
                            </div>
                            <div className="space-y-2">
                               <label className="text-[9px] font-black text-zinc-500 uppercase tracking-widest flex items-center gap-2"><Palette size={12} /> 2. Soul (Estilo/Cor)</label>
                               <div onClick={() => remixSoulRef.current?.click()} className="h-32 border-2 border-dashed border-zinc-800 rounded-2xl flex items-center justify-center bg-zinc-900/30 cursor-pointer overflow-hidden hover:border-purple-500 transition-colors">
-                                 {remixSoul ? <img src={remixSoul} className="w-full h-full object-cover" /> : <Plus className="text-zinc-600" size={24} />}
+                                 {remixSoul ? <img src={remixSoul} className="w-full h-full object-cover" alt="Soul Style" /> : <Plus className="text-zinc-600" size={24} />}
                               </div>
                               <input type="file" hidden ref={remixSoulRef} onChange={e => handleFile(e, setRemixSoul)} />
                            </div>
@@ -1217,7 +1217,7 @@ const App = () => {
                      </div>
                   </div>
                   <div className="lg:col-span-8 flex items-center justify-center bg-zinc-950 border-2 border-zinc-900 rounded-[4rem] min-h-[600px] relative overflow-hidden shadow-2xl">
-                     {generatedImage ? <img src={generatedImage} className="w-full h-full object-cover rounded-[3.8rem]" /> : <Maximize2 size={80} className="text-zinc-800 opacity-50" />}
+                     {generatedImage ? <img src={generatedImage} className="w-full h-full object-cover rounded-[3.8rem]" alt="Remix Gerado" /> : <Maximize2 size={80} className="text-zinc-800 opacity-50" />}
                   </div>
                </div>
             )}
@@ -1228,17 +1228,17 @@ const App = () => {
                   <div className="lg:col-span-4 space-y-8">
                      <div className="bg-zinc-950 p-10 rounded-[3rem] border border-zinc-900 shadow-2xl space-y-6">
                         <h3 className="text-2xl font-black uppercase italic text-white">Mockup Produto</h3>
-                        <div onClick={() => mockupInputRef.current?.click()} className="aspect-square border-2 border-dashed border-zinc-800 rounded-3xl flex items-center justify-center bg-zinc-900/30 cursor-pointer overflow-hidden">{mockupProduct ? <img src={mockupProduct} className="w-full h-full object-cover" /> : <Plus className="text-green-600" size={32} />}</div>
+                        <div onClick={() => mockupInputRef.current?.click()} className="aspect-square border-2 border-dashed border-zinc-800 rounded-3xl flex items-center justify-center bg-zinc-900/30 cursor-pointer overflow-hidden">{mockupProduct ? <img src={mockupProduct} className="w-full h-full object-cover" alt="Produto Mockup" /> : <Plus className="text-green-600" size={32} />}</div>
                         <input type="file" hidden ref={mockupInputRef} onChange={e => handleFile(e, setMockupProduct)} />
                         <div className="space-y-4">
-                           <input value={mockupEnv} onChange={e => setMockupEnv(e.target.value)} placeholder="Ambiente (Ex: Mesa de Madeira)" className="w-full bg-zinc-900 border border-zinc-800 p-4 rounded-xl text-xs font-bold text-white" />
-                           <input value={mockupComp} onChange={e => setMockupComp(e.target.value)} placeholder="Composição (Ex: Minimalista)" className="w-full bg-zinc-900 border border-zinc-800 p-4 rounded-xl text-xs font-bold text-white" />
+                           <input value={mockupEnv} onChange={e => setMockupEnv(e.target.value)} placeholder="Ambiente (Ex: Mesa de Madeira)" className="w-full bg-zinc-900 border border-zinc-800 p-4 rounded-xl text-xs font-bold text-white" aria-label="Ambiente" />
+                           <input value={mockupComp} onChange={e => setMockupComp(e.target.value)} placeholder="Composição (Ex: Minimalista)" className="w-full bg-zinc-900 border border-zinc-800 p-4 rounded-xl text-xs font-bold text-white" aria-label="Composicao" />
                         </div>
                         <button onClick={onExecuteProduction} disabled={loading} className="w-full bg-green-600 py-4 rounded-xl font-black uppercase text-xs">{loading ? <Loader2 className="animate-spin mx-auto" /> : "Gerar Mockup"}</button>
                      </div>
                   </div>
                   <div className="lg:col-span-8 flex items-center justify-center bg-zinc-950 border-2 border-zinc-900 rounded-[4rem] min-h-[600px] relative overflow-hidden">
-                     {generatedImage ? <img src={generatedImage} className="max-h-[600px] rounded-3xl" /> : <Box size={64} className="text-zinc-800" />}
+                     {generatedImage ? <img src={generatedImage} className="max-h-[600px] rounded-3xl" alt="Mockup Gerado" /> : <Box size={64} className="text-zinc-800" />}
                   </div>
                </div>
             )}
@@ -1250,17 +1250,17 @@ const App = () => {
                      <div className="bg-zinc-950 p-10 rounded-[3rem] border border-zinc-900 shadow-2xl space-y-6">
                         <h3 className="text-2xl font-black uppercase italic text-white">UGC Creator</h3>
                         <div className="grid grid-cols-2 gap-4">
-                           <div onClick={() => ugcProductRef.current?.click()} className="aspect-square border-2 border-dashed border-zinc-800 rounded-2xl flex items-center justify-center bg-zinc-900/30 cursor-pointer">{ugcProduct ? <img src={ugcProduct} className="w-full h-full object-cover rounded-xl" /> : <div className="text-center"><Box size={20} className="mx-auto" /><span className="text-[8px] font-bold">PRODUTO</span></div>}</div>
-                           <div onClick={() => ugcModelRef.current?.click()} className="aspect-square border-2 border-dashed border-zinc-800 rounded-2xl flex items-center justify-center bg-zinc-900/30 cursor-pointer">{ugcModel ? <img src={ugcModel} className="w-full h-full object-cover rounded-xl" /> : <div className="text-center"><User size={20} className="mx-auto" /><span className="text-[8px] font-bold">MODELO</span></div>}</div>
+                           <div onClick={() => ugcProductRef.current?.click()} className="aspect-square border-2 border-dashed border-zinc-800 rounded-2xl flex items-center justify-center bg-zinc-900/30 cursor-pointer">{ugcProduct ? <img src={ugcProduct} className="w-full h-full object-cover rounded-xl" alt="Produto UGC" /> : <div className="text-center"><Box size={20} className="mx-auto" /><span className="text-[8px] font-bold">PRODUTO</span></div>}</div>
+                           <div onClick={() => ugcModelRef.current?.click()} className="aspect-square border-2 border-dashed border-zinc-800 rounded-2xl flex items-center justify-center bg-zinc-900/30 cursor-pointer">{ugcModel ? <img src={ugcModel} className="w-full h-full object-cover rounded-xl" alt="Modelo UGC" /> : <div className="text-center"><User size={20} className="mx-auto" /><span className="text-[8px] font-bold">MODELO</span></div>}</div>
                         </div>
                         <input type="file" hidden ref={ugcProductRef} onChange={e => handleFile(e, setUgcProduct)} />
                         <input type="file" hidden ref={ugcModelRef} onChange={e => handleFile(e, setUgcModel)} />
-                        <textarea value={ugcContext} onChange={e => setUgcContext(e.target.value)} placeholder="Contexto (Ex: Selfie no espelho da academia)" className="w-full h-32 bg-black border border-zinc-800 p-4 rounded-2xl text-xs text-white resize-none" />
+                        <textarea value={ugcContext} onChange={e => setUgcContext(e.target.value)} placeholder="Contexto (Ex: Selfie no espelho da academia)" className="w-full h-32 bg-black border border-zinc-800 p-4 rounded-2xl text-xs text-white resize-none" aria-label="Contexto UGC" />
                         <button onClick={onExecuteProduction} disabled={loading} className="w-full bg-emerald-600 py-4 rounded-xl font-black uppercase text-xs">{loading ? <Loader2 className="animate-spin mx-auto" /> : "Gerar UGC"}</button>
                      </div>
                   </div>
                   <div className="lg:col-span-8 flex items-center justify-center bg-zinc-950 border-2 border-zinc-900 rounded-[4rem] min-h-[600px] relative overflow-hidden">
-                     {generatedImage ? <img src={generatedImage} className="max-h-[600px] rounded-3xl" /> : <Smartphone size={64} className="text-zinc-800" />}
+                     {generatedImage ? <img src={generatedImage} className="max-h-[600px] rounded-3xl" alt="UGC Gerado" /> : <Smartphone size={64} className="text-zinc-800" />}
                   </div>
                </div>
             )}
@@ -1271,17 +1271,17 @@ const App = () => {
                   <div className="lg:col-span-4 space-y-8">
                      <div className="bg-zinc-950 p-10 rounded-[3rem] border border-zinc-900 shadow-2xl space-y-6">
                         <h3 className="text-2xl font-black uppercase italic text-white">Restaurador Pro</h3>
-                        <div onClick={() => fileInputRef.current?.click()} className="aspect-video border-2 border-dashed border-zinc-800 rounded-3xl flex items-center justify-center bg-zinc-900/30 cursor-pointer overflow-hidden">{refFile ? <img src={refFile} className="w-full h-full object-cover" /> : <Plus className="text-purple-600" size={32} />}</div>
+                        <div onClick={() => fileInputRef.current?.click()} className="aspect-video border-2 border-dashed border-zinc-800 rounded-3xl flex items-center justify-center bg-zinc-900/30 cursor-pointer overflow-hidden">{refFile ? <img src={refFile} className="w-full h-full object-cover" alt="Referencia" /> : <Plus className="text-purple-600" size={32} />}</div>
                         <input type="file" hidden ref={fileInputRef} onChange={e => handleFile(e, setRefFile)} />
                         <div className="space-y-4">
-                           <select value={restoreMode} onChange={e => setRestoreMode(e.target.value)} className="w-full bg-zinc-900 border border-zinc-800 p-4 rounded-xl text-xs font-bold text-white">{restoreModes.map(m => <option key={m.id} value={m.id}>{m.title}</option>)}</select>
-                           <select value={damageLevel} onChange={e => setDamageLevel(e.target.value)} className="w-full bg-zinc-900 border border-zinc-800 p-4 rounded-xl text-xs font-bold text-white"><option>Leve</option><option>Médio</option><option>Grave</option></select>
+                           <select value={restoreMode} onChange={e => setRestoreMode(e.target.value)} className="w-full bg-zinc-900 border border-zinc-800 p-4 rounded-xl text-xs font-bold text-white" aria-label="Modo Restauracao">{restoreModes.map(m => <option key={m.id} value={m.id}>{m.title}</option>)}</select>
+                           <select value={damageLevel} onChange={e => setDamageLevel(e.target.value)} className="w-full bg-zinc-900 border border-zinc-800 p-4 rounded-xl text-xs font-bold text-white" aria-label="Nivel de Dano"><option>Leve</option><option>Médio</option><option>Grave</option></select>
                         </div>
                         <button onClick={onExecuteProduction} disabled={loading} className="w-full bg-purple-600 py-4 rounded-xl font-black uppercase text-xs">{loading ? <Loader2 className="animate-spin mx-auto" /> : "Restaurar"}</button>
                      </div>
                   </div>
                   <div className="lg:col-span-8 flex items-center justify-center bg-zinc-950 border-2 border-zinc-900 rounded-[4rem] min-h-[600px] relative overflow-hidden">
-                     {generatedImage ? <img src={generatedImage} className="max-h-[600px] rounded-3xl" /> : <RefreshCcw size={64} className="text-zinc-800" />}
+                     {generatedImage ? <img src={generatedImage} className="max-h-[600px] rounded-3xl" alt="Imagem Restaurada" /> : <RefreshCcw size={64} className="text-zinc-800" />}
                   </div>
                </div>
             )}
@@ -1296,12 +1296,12 @@ const App = () => {
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
                      <div className="bg-zinc-950 p-10 rounded-[3rem] border border-zinc-900 shadow-2xl space-y-6">
                         <div className="grid grid-cols-2 gap-4">
-                           <div onClick={() => consultProfileRef.current?.click()} className="aspect-square border-2 border-dashed border-zinc-800 rounded-2xl flex flex-col items-center justify-center cursor-pointer hover:border-blue-500">{consultProfile ? <img src={consultProfile} className="w-full h-full object-cover rounded-xl" /> : <span className="text-xs font-bold text-zinc-500">PERFIL</span>}</div>
-                           <div onClick={() => consultFeedRef.current?.click()} className="aspect-square border-2 border-dashed border-zinc-800 rounded-2xl flex flex-col items-center justify-center cursor-pointer hover:border-blue-500">{consultFeed ? <img src={consultFeed} className="w-full h-full object-cover rounded-xl" /> : <span className="text-xs font-bold text-zinc-500">FEED</span>}</div>
+                           <div onClick={() => consultProfileRef.current?.click()} className="aspect-square border-2 border-dashed border-zinc-800 rounded-2xl flex flex-col items-center justify-center cursor-pointer hover:border-blue-500">{consultProfile ? <img src={consultProfile} className="w-full h-full object-cover rounded-xl" alt="Consultoria Perfil" /> : <span className="text-xs font-bold text-zinc-500">PERFIL</span>}</div>
+                           <div onClick={() => consultFeedRef.current?.click()} className="aspect-square border-2 border-dashed border-zinc-800 rounded-2xl flex flex-col items-center justify-center cursor-pointer hover:border-blue-500">{consultFeed ? <img src={consultFeed} className="w-full h-full object-cover rounded-xl" alt="Consultoria Feed" /> : <span className="text-xs font-bold text-zinc-500">FEED</span>}</div>
                         </div>
                         <input type="file" hidden ref={consultProfileRef} onChange={e => handleFile(e, setConsultProfile)} />
                         <input type="file" hidden ref={consultFeedRef} onChange={e => handleFile(e, setConsultFeed)} />
-                        <input value={consultNiche} onChange={e => setConsultNiche(e.target.value)} placeholder="Nicho (Ex: Design, Fitness)" className="w-full bg-zinc-900 border border-zinc-800 p-4 rounded-xl text-xs font-bold text-white" />
+                        <input value={consultNiche} onChange={e => setConsultNiche(e.target.value)} placeholder="Nicho (Ex: Design, Fitness)" className="w-full bg-zinc-900 border border-zinc-800 p-4 rounded-xl text-xs font-bold text-white" aria-label="Nicho Consultoria" />
                         <button onClick={onExecuteProduction} disabled={loading} className="w-full bg-blue-600 py-6 rounded-2xl font-black uppercase text-xs">{loading ? <Loader2 className="animate-spin mx-auto" /> : "Analisar Perfil"}</button>
                      </div>
                      <div className="bg-zinc-950 p-10 rounded-[3rem] border border-zinc-900 shadow-2xl overflow-y-auto max-h-[600px] custom-scrollbar">
@@ -1345,7 +1345,7 @@ const App = () => {
                   <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8">
                      {history.map(item => (
                         <div key={item.id} onClick={() => setSelectedDetail(item)} className="relative group aspect-square rounded-[3rem] overflow-hidden border border-zinc-900 shadow-2xl hover:border-purple-600 transition-all cursor-pointer">
-                           <img src={item.url} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                           <img src={item.url} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Item Historico" />
                            <div className="absolute inset-0 bg-purple-900/60 opacity-0 group-hover:opacity-100 transition-all flex items-center justify-center"><Maximize2 size={32} className="text-white" /></div>
                         </div>
                      ))}
@@ -1357,8 +1357,8 @@ const App = () => {
             {selectedDetail && (
                <div className="max-w-7xl mx-auto animate-in zoom-in duration-500">
                   <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 bg-black/60 backdrop-blur-3xl rounded-[5rem] p-12 border border-zinc-800 shadow-2xl relative overflow-hidden">
-                     <button onClick={() => setSelectedDetail(null)} className="absolute top-12 left-12 p-4 bg-zinc-900/80 rounded-2xl hover:bg-red-600 transition-all z-50 shadow-xl border border-white/5"><X size={24} /></button>
-                     <div className="lg:col-span-7 flex items-center justify-center"><img src={selectedDetail.url} className="max-h-[750px] rounded-[4rem] border-[16px] border-zinc-900 shadow-2xl relative z-10" /></div>
+                     <button onClick={() => setSelectedDetail(null)} className="absolute top-12 left-12 p-4 bg-zinc-900/80 rounded-2xl hover:bg-red-600 transition-all z-50 shadow-xl border border-white/5" aria-label="Fechar Detalhe"><X size={24} /></button>
+                     <div className="lg:col-span-7 flex items-center justify-center"><img src={selectedDetail.url} className="max-h-[750px] rounded-[4rem] border-[16px] border-zinc-900 shadow-2xl relative z-10" alt="Detalhe da Obra" /></div>
                      <div className="lg:col-span-5 space-y-12 py-6">
                         <header className="space-y-6"><div className="flex gap-3">{selectedDetail.tags?.map((t: string) => (<span key={t} className="px-4 py-2 bg-zinc-800 rounded-xl text-[9px] font-black text-zinc-400 uppercase tracking-widest border border-zinc-700 italic shadow-xl">#{t}</span>))}</div><h2 className="text-5xl font-black uppercase italic tracking-tighter leading-none text-white">Obra Criativa Core</h2><p className="text-[10px] font-bold text-zinc-600 uppercase tracking-[0.4em]">SÍNTESE EXECUTADA EM: {selectedDetail.date}</p></header>
                         <div className="bg-zinc-900/50 border border-zinc-800 p-8 rounded-[3rem] relative group shadow-inner"><div className="flex items-center gap-3 mb-6 text-zinc-600"><Terminal size={16} /><span className="text-[9px] font-black uppercase tracking-widest">Neural Source Code</span></div><div className="h-48 overflow-y-auto custom-scrollbar text-[11px] font-mono text-zinc-400 leading-loose italic pr-4">{selectedDetail.prompt}</div></div>
